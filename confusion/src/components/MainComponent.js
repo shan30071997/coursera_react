@@ -4,6 +4,9 @@ import Menu from "./MenuComponent";
 import DishDetail from "./DishdetailComponent";
 import { DISHES } from "../shared/dishes";
 
+import Header from "./HeaderComponent";
+import Footer from "./FooterComponent";
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +29,7 @@ class Main extends Component {
             <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
           </div>
         </Navbar>
+        <Header />
         <Menu
           dishes={this.state.dishes}
           onClick={dishId => this.onDishSelect(dishId)}
@@ -37,6 +41,7 @@ class Main extends Component {
             )[0]
           }
         />
+        <Footer />
       </div>
     );
   }

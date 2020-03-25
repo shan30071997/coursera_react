@@ -10,23 +10,28 @@ import {
 import { Link } from "react-router-dom";
 
 function RenderLeader({ leader }) {
+  const imgStyle = {
+    maxHeight: 65,
+    maxWidth: 65
+  };
+
   return (
-    <div className="row mt-5 align-items-center">
-      <div className="col col-sm order-sm-first col-md">
-        <div className="media">
-          <img
-            className="d-flex mr-3 img-thumbnail"
-            src={leader.image}
-            alt={leader.name}
-          />
-          <div className="media-body ml-5">
-            <h2 className="mt-0">{leader.name}</h2>
-            <p>{leader.designation}</p>
-            <p className="d-none d-sm-block">{leader.description}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Media className="mb-5">
+      <Media left href="#">
+        <Media
+          object
+          src={leader.image}
+          style={imgStyle}
+          alt={leader.name}
+          className="mr-4"
+        />
+      </Media>
+      <Media body>
+        <Media heading>{leader.name}</Media>
+        <p>{leader.designation}</p>
+        <p>{leader.description}</p>
+      </Media>
+    </Media>
   );
 }
 
